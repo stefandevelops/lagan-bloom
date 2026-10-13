@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lagan &amp; Bloom · Florist on the Lisburn Road, Belfast · Same-day flower delivery</title>
+    <meta
+      name="description"
+      content="Independent florist on the Lisburn Road, Belfast. Seasonal hand-tied bouquets, same-day flower delivery across Belfast, wedding flowers and workshops."
+    />
+    <meta property="og:title" content="Lagan & Bloom · Belfast florist" />
+    <meta property="og:description" content="Seasonal flowers, same-day delivery across Belfast, weddings and workshops." />
+    <meta property="og:image" content="/img/hero.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Florist",
+        "name": "Lagan & Bloom",
+        "image": "/img/shopfront.jpg",
+        "telephone": "+44 28 9649 6123",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "214 Lisburn Road",
+          "addressLocality": "Belfast",
+          "postalCode": "BT9 6GD",
+          "addressCountry": "GB"
+        },
+        "openingHours": ["Mo-We 09:00-18:00", "Th 09:00-19:00", "Fr 09:00-18:00", "Sa 09:00-17:30", "Su 12:00-16:00"]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <div class="announce" id="announce">
+      <span id="cutoff-text">Same-day delivery across Belfast when you order by 2pm.</span>
+    </div>
+
+    <header class="header" id="header">
+      <div class="header-inner">
+        <a href="#top" class="brand" aria-label="Lagan & Bloom home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M16 4c3 4 3 8 0 12-3-4-3-8 0-12Zm0 12c4-2 8-1 11 2-4 2-8 1-11-2Zm0 0c-4-2-8-1-11 2 4 2 8 1 11-2Zm0 0v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="brand-name">Lagan <em>&amp;</em> Bloom</span>
+        </a>
+        <nav class="nav" id="nav" aria-label="Main">
+          <a href="#shop">Shop</a>
+          <a href="#delivery">Delivery</a>
+          <a href="#subscriptions">Subscriptions</a>
+          <a href="#weddings">Weddings</a>
+          <a href="#workshops">Workshops</a>
+          <a href="#visit">Visit us</a>
+        </nav>
+        <div class="header-actions">
+          <a class="header-phone" href="tel:+442896496123">028 9649 6123</a>
+          <button class="basket-btn" id="basket-open" type="button" aria-label="Open basket">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Zm3 0V7a4 4 0 0 1 8 0v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span>Basket</span>
+            <b id="basket-count" class="count">0</b>
+          </button>
+          <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero-media">
+          <img src="/img/hero.jpg" alt="A florist arranging a hand-tied bouquet of garden roses and sweet peas in the shop" />
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Florist · Lisburn Road, Belfast</p>
+          <h1>Seasonal flowers, <em>arranged by hand</em> and delivered across Belfast today.</h1>
+          <p class="lede">
+            We're a small, independent florist in south Belfast. We buy from Northern Irish growers when we can, wrap everything plastic-free,
+            and deliver by van and cargo bike across the city.
+          </p>
+          <div class="hero-ctas">
+            <a href="#shop" class="btn btn-primary">Shop flowers</a>
+            <a href="#delivery" class="btn btn-ghost">Check your postcode</a>
+          </div>
+          <ul class="trust">
+            <li><b>4.9 ★</b><span>from 640 Google reviews</span></li>
+            <li><b>Same-day</b><span>BT1–BT17 by 2pm</span></li>
+            <li><b>Free</b><span>delivery over £60</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SHOP -->
+      <section class="section" id="shop">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Shop</p>
+            <h2>This week's flowers</h2>
+          </div>
+          <div class="filters" role="tablist" aria-label="Filter products" id="filters"></div>
+        </div>
+        <p class="section-note">
+          Every bouquet is made to order on the day it's delivered, so the exact stems change with what's best at the market. The colours and feel stay the same.
+        </p>
+        <div class="grid" id="products"></div>
+      </section>
+
+      <!-- DELIVERY -->
+      <section class="section band" id="delivery">
+        <div class="split">
+          <div>
+            <p class="eyebrow">Delivery</p>
+            <h2>Do we deliver to you today?</h2>
+            <p>
+              Pop in a postcode and we'll tell you the price and the earliest delivery date. We deliver Monday to Saturday. Sunday orders go out first thing Monday.
+            </p>
+            <form class="postcode-form" id="postcode-form" novalidate>
+              <label for="postcode-input" class="sr-only">Postcode</label>
+              <input id="postcode-input" name="postcode" placeholder="e.g. BT9 6GD" autocomplete="postal-code" inputmode="text" />
+              <button class="btn btn-primary" type="submit">Check</button>
+            </form>
+            <div class="postcode-result" id="postcode-result" aria-live="polite"></div>
+          </div>
+          <div class="zones">
+            <article class="zone">
+              <h3>Belfast</h3>
+              <p class="zone-codes">BT1 to BT17</p>
+              <p><b>£5.95</b>, free over £60. Same-day when you order by <b>2pm</b>.</p>
+            </article>
+            <article class="zone">
+              <h3>Greater Belfast</h3>
+              <p class="zone-codes">Holywood, Lisburn, Newtownabbey, Carrickfergus, Comber</p>
+              <p><b>£8.95</b>, free over £80. Same-day when you order by <b>12 noon</b>.</p>
+            </article>
+            <article class="zone">
+              <h3>Rest of Northern Ireland</h3>
+              <p class="zone-codes">All other BT postcodes</p>
+              <p><b>£9.95</b> tracked courier. Next day, Tuesday to Saturday.</p>
+            </article>
+            <article class="zone zone-collect">
+              <h3>Click &amp; collect</h3>
+              <p class="zone-codes">214 Lisburn Road</p>
+              <p><b>Free.</b> Ready within two hours during opening times.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SUBSCRIPTIONS -->
+      <section class="section" id="subscriptions">
+        <div class="split split-media">
+          <figure class="media-frame tall">
+            <img src="/img/founder.jpg" alt="Niamh holding a bucket of fresh sweet peas in the shop" loading="lazy" />
+          </figure>
+          <div>
+            <p class="eyebrow">Flower subscriptions</p>
+            <h2>Fresh flowers on Fridays, <em>without thinking about it.</em></h2>
+            <p>
+              A florist's-choice bouquet of whatever is best that week, delivered to your home or office in Belfast. Pause, skip or cancel any time from your
+              account. No minimum term.
+            </p>
+            <div class="subs" id="subs" role="radiogroup" aria-label="Subscription frequency"></div>
+            <button class="btn btn-primary" id="sub-add" type="button">Start subscription</button>
+            <p class="small muted">Delivery is included in Belfast (BT1–BT17). Elsewhere in NI, add £4 a delivery.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WEDDINGS -->
+      <section class="section band dark" id="weddings">
+        <div class="split split-media reverse">
+          <div>
+            <p class="eyebrow">Weddings &amp; events</p>
+            <h2>Wedding flowers from <em>first chat to last stem.</em></h2>
+            <p>
+              We do around thirty weddings a year, from registry office posies at Belfast City Hall to full installations at country houses across County Down
+              and Antrim. Every couple gets a free consultation in the studio, a written proposal and a mock-up of the bridal bouquet.
+            </p>
+            <ul class="ticks">
+              <li>Bridal and bridesmaid bouquets from £140</li>
+              <li>Buttonholes and corsages from £14</li>
+              <li>Ceremony arches, table centres and venue styling</li>
+              <li>Most couples spend between £900 and £2,500</li>
+            </ul>
+            <form class="enquiry" id="wedding-form" novalidate>
+              <div class="field-row">
+                <label>Your names<input name="names" required autocomplete="name" /></label>
+                <label>Email<input name="email" type="email" required autocomplete="email" /></label>
+              </div>
+              <div class="field-row">
+                <label>Wedding date<input name="date" type="date" required /></label>
+                <label>Venue<input name="venue" placeholder="e.g. The Merchant Hotel" /></label>
+              </div>
+              <label
+                >Rough flower budget
+                <select name="budget">
+                  <option>Not sure yet</option>
+                  <option>Under £800</option>
+                  <option>£800 – £1,500</option>
+                  <option>£1,500 – £3,000</option>
+                  <option>£3,000+</option>
+                </select>
+              </label>
+              <label>Tell us a bit about the day<textarea name="message" rows="3"></textarea></label>
+              <button class="btn btn-light" type="submit">Send enquiry</button>
+              <p class="form-status" id="wedding-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <figure class="media-frame tall">
+            <img src="/img/wedding.jpg" alt="A bride holding a loose bouquet of white garden roses and sweet peas" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- WORKSHOPS -->
+      <section class="section" id="workshops">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Workshops</p>
+            <h2>Learn to do it yourself</h2>
+          </div>
+          <p class="section-note right">Small groups of up to ten in our studio behind the shop. Flowers, tools, tea and a scone included. Take home everything you make.</p>
+        </div>
+        <div class="workshops">
+          <figure class="media-frame wide">
+            <img src="/img/workshop.jpg" alt="A group making wreaths around a long table in the studio" loading="lazy" />
+          </figure>
+          <ul class="sessions" id="sessions"></ul>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section band" id="about">
+        <div class="split split-media">
+          <figure class="media-frame">
+            <img src="/img/shopfront.jpg" alt="The green Lagan & Bloom shopfront on the Lisburn Road with buckets of flowers outside" loading="lazy" />
+          </figure>
+          <div>
+            <p class="eyebrow">About us</p>
+            <h2>A corner shop that happens to sell flowers.</h2>
+            <p>
+              Niamh opened Lagan &amp; Bloom in 2017 after ten years working for florists in London and Dublin. She wanted a shop that felt like a local:
+              somewhere you could pop in for a fiver's worth of tulips as easily as order your wedding flowers.
+            </p>
+            <p>
+              Today there are six of us. From May to October around half our flowers are grown here in Northern Ireland, by small growers in Down, Armagh and
+              Antrim. The rest come from the Dutch auctions via a wholesaler in Belfast. We compost all our green waste and our cargo bike does most of the
+              city-centre runs.
+            </p>
+            <dl class="facts">
+              <div><dt>Since</dt><dd>2017</dd></div>
+              <div><dt>Local stems, May–Oct</dt><dd>~50%</dd></div>
+              <div><dt>Plastic in our wrapping</dt><dd>None</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section class="section" id="reviews">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Reviews</p>
+            <h2>What Belfast says</h2>
+          </div>
+          <p class="section-note right"><b>4.9 out of 5</b> from 640 Google reviews</p>
+        </div>
+        <div class="reviews">
+          <blockquote>
+            <p>“Ordered at 1pm for my mum's birthday in Stranmillis and they were at her door by four. She sent me about nine photos.”</p>
+            <footer>Ciara D. · ★★★★★</footer>
+          </blockquote>
+          <blockquote>
+            <p>“Niamh did our wedding at Montalto. She listened to everything and somehow made it look better than the Pinterest board.”</p>
+            <footer>Ryan &amp; Aoife · ★★★★★</footer>
+          </blockquote>
+          <blockquote>
+            <p>“My Friday subscription is the best money I spend. Different every week, always lasts well past the following Friday.”</p>
+            <footer>Gareth M. · ★★★★★</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- VISIT -->
+      <section class="section band" id="visit">
+        <div class="split">
+          <div>
+            <p class="eyebrow">Visit us</p>
+            <h2>214 Lisburn Road, Belfast BT9 6GD</h2>
+            <p class="open-status" id="open-status">&nbsp;</p>
+            <table class="hours" id="hours"></table>
+            <p class="small muted">
+              Between the Eglantine Avenue and Cranmore Park junctions. The 9A and 9B buses stop outside, and there's on-street parking on the side streets.
+            </p>
+            <div class="contact-links">
+              <a class="btn btn-primary" href="tel:+442896496123">Call 028 9649 6123</a>
+              <a class="btn btn-ghost" href="mailto:hello@laganandbloom.co.uk">Email us</a>
+              <a
+                class="btn btn-ghost"
+                href="https://www.openstreetmap.org/?mlat=54.5817&amp;mlon=-5.9446#map=17/54.5817/-5.9446"
+                target="_blank"
+                rel="noopener"
+                >Directions</a
+              >
+            </div>
+          </div>
+          <div class="map">
+            <iframe
+              title="Map showing Lagan & Bloom on the Lisburn Road"
+              loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-5.9530%2C54.5775%2C-5.9362%2C54.5858&amp;layer=mapnik&amp;marker=54.5817%2C-5.9446"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="split">
+          <div>
+            <p class="eyebrow">Questions</p>
+            <h2>Good to know</h2>
+            <p>Can't find the answer? Ring the shop on <a href="tel:+442896496123">028 9649 6123</a> and you'll get a florist, not a call centre.</p>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Can I choose a delivery time?</summary>
+              <p>
+                We deliver between 10am and 6pm. We can't promise exact times, but add a note at checkout (for example, “before 1pm, office closes”) and
+                we'll route around it. For funerals we always deliver to the funeral director's timetable.
+              </p>
+            </details>
+            <details>
+              <summary>What if nobody's home?</summary>
+              <p>We'll try a neighbour first, then leave the flowers somewhere safe and shaded, and text you a photo. If neither works, we'll bring them back and call you.</p>
+            </details>
+            <details>
+              <summary>Do the flowers look exactly like the photos?</summary>
+              <p>
+                The colours, size and style will match. The exact stems change week to week with what's good at the market, which is why our flowers last
+                longer than most.
+              </p>
+            </details>
+            <details>
+              <summary>How long will they last?</summary>
+              <p>Most of our bouquets last 7 to 10 days. Trim the stems, change the water every couple of days and keep them away from the fruit bowl and radiators.</p>
+            </details>
+            <details>
+              <summary>Do you deliver to hospitals?</summary>
+              <p>
+                The Royal, the City and the Ulster don't accept flowers on wards. We're happy to deliver to the main reception for a patient's family to collect,
+                or straight to their home for when they're back.
+              </p>
+            </details>
+            <details>
+              <summary>Can I order for Mother's Day or Valentine's Day?</summary>
+              <p>Yes. Pre-orders open about four weeks before each date. Same-day cut-off is earlier on those days, usually 11am.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <p class="brand-name big">Lagan <em>&amp;</em> Bloom</p>
+          <p class="muted">Independent florist on the Lisburn Road, Belfast. Seasonal flowers, plastic-free, delivered across Northern Ireland.</p>
+        </div>
+        <div>
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="#shop">Bouquets</a></li>
+            <li><a href="#subscriptions">Subscriptions</a></li>
+            <li><a href="#shop" data-filter-link="sympathy">Sympathy flowers</a></li>
+            <li><a href="#workshops">Workshops</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Help</h3>
+          <ul>
+            <li><a href="#delivery">Delivery areas</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#visit">Opening hours</a></li>
+            <li><a href="mailto:hello@laganandbloom.co.uk">hello@laganandbloom.co.uk</a></li>
+          </ul>
+        </div>
+        <form class="newsletter" id="newsletter" novalidate>
+          <h3>Seasonal newsletter</h3>
+          <p class="muted small">One email a month: what's in season, workshop dates, and first dibs on Mother's Day.</p>
+          <div class="newsletter-row">
+            <label for="nl-email" class="sr-only">Email address</label>
+            <input id="nl-email" type="email" placeholder="you@example.com" required autocomplete="email" />
+            <button class="btn btn-primary" type="submit">Sign up</button>
+          </div>
+          <p class="form-status small" id="nl-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="footer-base">
+        <p>© 2026 Lagan &amp; Bloom Ltd · 214 Lisburn Road, Belfast BT9 6GD</p>
+        <p>Demo site: the business, people, reviews and phone number are fictional, and no orders or messages are sent.</p>
+      </div>
+    </footer>
+
+    <!-- BASKET DRAWER -->
+    <div class="scrim" id="scrim" hidden></div>
+    <aside class="drawer" id="drawer" aria-label="Basket" aria-hidden="true" tabindex="-1">
+      <div class="drawer-head">
+        <h2 id="drawer-title">Your basket</h2>
+        <button class="icon-btn" id="basket-close" type="button" aria-label="Close basket">✕</button>
+      </div>
+      <div class="drawer-body" id="drawer-body"></div>
+      <div class="drawer-foot" id="drawer-foot"></div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
