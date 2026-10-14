@@ -2,6 +2,8 @@
 
 A realistic website for an independent florist on Lisburn Road, Belfast. It covers the things a real local flower shop needs: an online shop, same-day delivery by postcode, subscriptions, wedding enquiries, workshops and opening hours.
 
+**Live site: [stefandevelops.github.io/lagan-bloom](https://stefandevelops.github.io/lagan-bloom/)**
+
 > **Demo project.** The business, people, reviews and phone number are fictional. No payments are taken and no orders or forms are sent anywhere.
 
 ![Homepage](docs/home.jpg)
@@ -40,6 +42,10 @@ npm run dev      # development server
 npm run build    # production build in dist/
 npm run preview  # preview the production build
 ```
+
+## Deployment
+
+Every push to `main` is built and published to GitHub Pages by `.github/workflows/deploy.yml`. Production builds are served from `/lagan-bloom/` (set in `vite.config.js`); if you rename the repository, update that path.
 
 ## Project structure
 
